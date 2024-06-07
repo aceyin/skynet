@@ -107,8 +107,8 @@ local function launch_service(service, ...)
 end
 
 function command.LAUNCH(_, service, ...)
-	launch_service(service, ...)
-	return NORET
+	local addr = launch_service(service, ...)
+	return addr or NORET
 end
 
 function command.LOGLAUNCH(_, service, ...)
